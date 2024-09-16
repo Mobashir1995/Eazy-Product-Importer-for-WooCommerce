@@ -27,3 +27,6 @@ This plugin only import WooCommerce products
 = 0.0.2 (05-11-24) =
 * Improve Code Qualities
 * Fix Major Issues
+
+= 0.0.3 (05-23-24) =
+* Use sanitize_url instead of esc_url on class-wcpi-ajax.php on line 142
