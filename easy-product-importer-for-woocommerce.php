@@ -144,7 +144,7 @@ final class WCPI {
 	public function __construct() {
 		$this->define_constants();
 		$this->check_compatibility();
-		if ( class_exists( 'woocommerce' ) ) {
+		if ( ! class_exists( 'WooCommerce', false ) ) {
 			$this->includes();
 			$this->objects();
 			$this->init_hooks();
