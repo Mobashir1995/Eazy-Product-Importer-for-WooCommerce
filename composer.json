@@ -1,0 +1,21 @@
+{
+    "require": {
+        "automattic/woocommerce": "^3.1",
+        "php": "7.4.19"
+    },
+    "require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"squizlabs/php_codesniffer": "^3.7",
+		"wp-coding-standards/wpcs": "^2.3"
+	},
+    "scripts": {
+		"lint-php": "vendor/bin/phpcs -s",
+		"lint-php-fix": "vendor/bin/phpcbf"
+	},
+    "config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}   
+}

@@ -1,0 +1,122 @@
+.wcpi-navigation-bar {
+  padding-top: 0;
+}
+
+.wcpi-margin-15 {
+  margin: 15px !important;
+}
+.wcpi-auth-btn {
+  margin-top: 5px !important;
+  display: flex;
+  align-items: center;
+}
+.disable-auth-btn{
+  display: none !important;
+}
+.wcpi-light-weight {
+  font-weight: 400;
+}
+
+body {
+  background: #f1f1f1;
+  color: #444;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  line-height: 1.4em;
+  min-width: 600px;
+}
+
+table.wc_status_table td mark.yes,
+table.wc_status_table th mark.yes {
+  color: #7ad03a;
+  background: transparent;
+}
+
+.ui.dimmer.modals.active {
+  z-index: 999999 !important;
+}
+
+.wcpi-border-bottom {
+  border: 0;
+  border-bottom: 1px solid rgba(34, 36, 38, .1);
+}
+
+.wcpi-no-border {
+  border: 0 !important;
+}
+
+.button.wcpi-upgrade-pro-btn {
+  height: 36px;
+}
+
+.wcpi .ui.menu {
+  padding-top: 0;
+}
+
+.wcpi-fixed-nav-bar {
+  position: fixed;
+  top: 35px;
+  z-index: 9999;
+}
+
+.wcpi-import-btn {
+  background: #2185d0 !important;
+}
+
+.wcpi-navigation-bar .item {
+  line-height: 18px !important;
+}
+
+.wcpi-import-completed-header {
+  margin: 0;
+}
+
+.ajax_loaded_content {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/*.bg-grey{
+  background: #f1f1f1 !important;
+}*/
+.ui.form input[type='text'],
+.ui.form select {
+  background: #fafafa;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset;
+  border: 1px solid #cccccc;
+}
+
+.ui.loader:after {
+  border-color: #0085ba transparent transparent;
+}
+
+.wcpi-import-running {
+  opacity: 0.6;
+}
+
+.wcpi-hidden {
+  visibility: hidden;
+}
+
+.wcpi-d-none {
+  display: none;
+}
+
+.wcpi-start-importer-btn {
+  height: 36px;
+  line-height: 36px !important;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+  .wcpi-navigation-bar .item {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .wcpi-fixed-nav-bar {
+    top: 0;
+  }
+}
