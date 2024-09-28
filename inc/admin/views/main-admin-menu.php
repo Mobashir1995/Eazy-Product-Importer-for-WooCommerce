@@ -243,6 +243,7 @@
 				<div id='import-settings' class="title wcpi-border-bottom active bg-grey"><!-- Start Product Settings -->
 					<h3 class="ui block header">
 						<?php esc_html_e( 'Import Settings', 'wcpi' ); ?>
+						<span class="ui small error text"><?php esc_html_e( ' (Filter Import)', 'wcpi' ); ?></span>
 					</h3>
 				</div>
 				<div class="content">	
@@ -261,7 +262,7 @@
 										<option value="private" <?php echo selected( $wb_wcpi_filter_product_status, 'private' ); ?>><?php esc_html_e( 'Private', 'wcpi' ); ?></option>
 										<option value="draft" <?php echo selected( $wb_wcpi_filter_product_status, 'draft' ); ?>><?php esc_html_e( 'Draft', 'wcpi' ); ?></option>
 									</select>
-									<span class="ui small error text"><?php esc_html_e( 'You Can Set Default Product Status from here', 'wcpi' ); ?></span>
+									<span class="ui small error text"><?php esc_html_e( 'Limit results to only these product status', 'wcpi' ); ?></span>
 								</td>
 							</tr>
 							<tr>							
@@ -276,6 +277,7 @@
 										<option value="grouped" <?php echo selected( $wb_wcpi_filter_product_type, 'grouped' ); ?>><?php esc_html_e( 'Grouped', 'wcpi' ); ?></option>
 										<option value="external" <?php echo selected( $wb_wcpi_filter_product_type, 'external' ); ?>><?php esc_html_e( 'External', 'wcpi' ); ?></option>
 									</select>
+									<span class="ui small error text"><?php esc_html_e( 'Limit results to only these product types', 'wcpi' ); ?></span>
 								</td>
 							</tr>
 
@@ -301,7 +303,10 @@
 									<label for="wb_wcpi_product_filter_tag_id"><?php esc_html_e( 'Products Tags', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_product_filter_tag_id" id="wb_wcpi_product_filter_tag_id" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_product_filter_tag_id ); ?>" class="" name="wb_wcpi_product_filter_tag_id" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Limit results to only these tags. Only accepts Tag ID. If you have multiple tag ID, then separate them by Comma.', 'wcpi' ); ?> </span>
 								</td>
 							</tr>
@@ -310,7 +315,10 @@
 									<label for="wb_wcpi_filter_sku"><?php esc_html_e( 'Products SKU', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_filter_sku" id="wb_wcpi_filter_sku" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_sku ); ?>" class="" name="wb_wcpi_filter_sku" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Limit results to only these SKU\'s. If you have multiple SKU\'s, then separate them by Comma.', 'wcpi' ); ?> </span>
 								</td>
 							</tr>
@@ -319,7 +327,10 @@
 									<label for="wb_wcpi_filter_include_id"><?php esc_html_e( 'Include Products', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_filter_include_id" id="wb_wcpi_filter_include_id" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_include_id ); ?>" class="" name="wb_wcpi_filter_include_id" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Limit results to only these products. Only accepts Product ID. If you have multiple Product ID, then separate them by Comma.', 'wcpi' ); ?> </span>
 								</td>
 							</tr>
@@ -328,7 +339,10 @@
 									<label for="wb_wcpi_filter_exclude_id"><?php esc_html_e( 'Exclude Products', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_filter_exclude_id" id="wb_wcpi_filter_exclude_id" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_exclude_id ); ?>" class="" name="wb_wcpi_filter_exclude_id" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Exclude these products from the result. Only accepts Product ID. If you have multiple Product ID, then separate them by Comma.', 'wcpi' ); ?> </span>
 								</td>
 							</tr>
@@ -337,7 +351,10 @@
 									<label for="wb_wcpi_filter_min_price"><?php esc_html_e( 'Min Price', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_filter_min_price" id="wb_wcpi_filter_min_price" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_min_price ); ?>" class="" name="wb_wcpi_filter_min_price" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Filter Product By Minimum Price', 'wcpi' ); ?></span>
 								</td>
 							</tr>
@@ -346,7 +363,10 @@
 									<label for="wb_wcpi_filter_max_price"><?php esc_html_e( 'Max Price', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<input name="wb_wcpi_filter_max_price" id="wb_wcpi_filter_max_price" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_max_price ); ?>" class="" name="wb_wcpi_filter_max_price" placeholder="">
+									<div class="ui action input">
+										<input type="text" readonly class="wcpi-disable-input" placeholder="">
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Filter Product By Minimum Price', 'wcpi' ); ?></span>
 								</td>
 							</tr>
@@ -355,12 +375,15 @@
 									<label for="wb_wcpi_filter_product_stock_status"><?php esc_html_e( 'Stock Status', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<select class="ui search dropdown" name="wb_wcpi_filter_product_stock_status" id="wb_wcpi_filter_product_stock_status">
-										<option value="any" <?php echo selected( $wb_wcpi_filter_product_stock_status, 'any' ); ?> ><?php esc_html_e( 'Any', 'wcpi' ); ?></option>
-										<option value="instock" <?php echo selected( $wb_wcpi_filter_product_stock_status, 'instock' ); ?> ><?php esc_html_e( 'In Stock', 'wcpi' ); ?></option>
-										<option value="outofstock" <?php echo selected( $wb_wcpi_filter_product_stock_status, 'outofstock' ); ?>><?php esc_html_e( 'Out of Stock ', 'wcpi' ); ?></option>
-										<option value="onbackorder" <?php echo selected( $wb_wcpi_filter_product_stock_status, 'onbackorder' ); ?>><?php esc_html_e( 'On Back Order', 'wcpi' ); ?></option>
-									</select>
+									<div class="ui action input">
+										<select readonly class="ui search dropdown wcpi-disable-input w-100" >
+											<option><?php esc_html_e( 'Any', 'wcpi' ); ?></option>
+											<option><?php esc_html_e( 'In Stock', 'wcpi' ); ?></option>
+											<option><?php esc_html_e( 'Out of Stock ', 'wcpi' ); ?></option>
+											<option><?php esc_html_e( 'On Back Order', 'wcpi' ); ?></option>
+										</select>
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Filter Product By Stock Status', 'wcpi' ); ?></span>
 								</td>
 							</tr>
@@ -380,15 +403,17 @@
 									<label for="wb_wcpi_filter_product_orderby"><?php esc_html_e( 'Order By', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<select class="ui search dropdown" name="wb_wcpi_filter_product_orderby" id="wb_wcpi_filter_product_orderby">
-										<!-- <option value="date" <?php echo selected( $wb_wcpi_filter_product_orderby, 'date' ); ?> ><?php esc_html_e( 'Date', 'wcpi' ); ?></option> -->
-										<option value="id" <?php echo selected( $wb_wcpi_filter_product_orderby, 'id' ); ?>><?php esc_html_e( 'ID', 'wcpi' ); ?></option>
-										<option value="title" <?php echo selected( $wb_wcpi_filter_product_orderby, 'title' ); ?>><?php esc_html_e( 'Title', 'wcpi' ); ?></option>
-										<option value="slug" <?php echo selected( $wb_wcpi_filter_product_orderby, 'slug' ); ?>><?php esc_html_e( 'Slug', 'wcpi' ); ?></option>
-										<option value="price" <?php echo selected( $wb_wcpi_filter_product_orderby, 'price' ); ?>><?php esc_html_e( 'Price', 'wcpi' ); ?></option>
-										<option value="popularity" <?php echo selected( $wb_wcpi_filter_product_orderby, 'popularity' ); ?>><?php esc_html_e( 'Popularity', 'wcpi' ); ?></option>
-										<option value="rating" <?php echo selected( $wb_wcpi_filter_product_orderby, 'rating' ); ?>><?php esc_html_e( 'Rating', 'wcpi' ); ?></option>
-									</select>
+									<div class="ui action input">
+										<select class="ui search dropdown wcpi-disable-input w-100" >
+											<option value="id" <?php echo selected( $wb_wcpi_filter_product_orderby, 'id' ); ?>><?php esc_html_e( 'ID', 'wcpi' ); ?></option>
+											<option value="title" <?php echo selected( $wb_wcpi_filter_product_orderby, 'title' ); ?>><?php esc_html_e( 'Title', 'wcpi' ); ?></option>
+											<option value="slug" <?php echo selected( $wb_wcpi_filter_product_orderby, 'slug' ); ?>><?php esc_html_e( 'Slug', 'wcpi' ); ?></option>
+											<option value="price" <?php echo selected( $wb_wcpi_filter_product_orderby, 'price' ); ?>><?php esc_html_e( 'Price', 'wcpi' ); ?></option>
+											<option value="popularity" <?php echo selected( $wb_wcpi_filter_product_orderby, 'popularity' ); ?>><?php esc_html_e( 'Popularity', 'wcpi' ); ?></option>
+											<option value="rating" <?php echo selected( $wb_wcpi_filter_product_orderby, 'rating' ); ?>><?php esc_html_e( 'Rating', 'wcpi' ); ?></option>
+										</select>
+										<?php echo wcpi_buy_pro_button(); ?>
+									</div>
 								</td>
 							</tr>
 							<tr valign="top">
@@ -397,9 +422,12 @@
 								</td>
 								<td class="forminp forminp-text field">
 									<div class="ui calendar">
-										<div class="ui input left icon">
-										<i class="calendar icon"></i>
-										<input name="wb_wcpi_filter_product_date_before" id="wb_wcpi_filter_product_date_before" class="wb_wcpi_calendar" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_product_date_before ); ?>" class="" name="wb_wcpi_filter_product_date_before" placeholder="" autocomplete="off">
+										<div class="ui action input">
+											<div class="ui input left icon">
+												<i class="calendar icon"></i>
+												<input class="wb_wcpi_calendar wcpi-disable-input" readonly type="text" autocomplete="off">
+											</div>
+											<?php echo wcpi_buy_pro_button(); ?>
 										</div>
 									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Filter Products which are created before the given date', 'wcpi' ); ?></span>
@@ -410,10 +438,13 @@
 									<label for="wb_wcpi_filter_product_date_after"><?php esc_html_e( 'Date After', 'wcpi' ); ?> </label>
 								</td>
 								<td class="forminp forminp-text field">
-									<div class="ui calendar">
-										<div class="ui input left icon">
-										<i class="calendar icon"></i>
-										<input name="wb_wcpi_filter_product_date_after" id="wb_wcpi_filter_product_date_after" class="wb_wcpi_calendar" type="text" style="" value="<?php echo esc_attr( $wb_wcpi_filter_product_date_after ); ?>" class="" name="wb_wcpi_filter_product_date_after" placeholder="" autocomplete="off">
+								<div class="ui calendar">
+									<div class="ui action input">
+											<div class="ui input left icon">
+												<i class="calendar icon"></i>
+												<input class="wb_wcpi_calendar wcpi-disable-input" readonly type="text" autocomplete="off">
+											</div>
+											<?php echo wcpi_buy_pro_button(); ?>
 										</div>
 									</div>
 									<span class="ui small error text"><?php esc_html_e( 'Filter Products which are created after the given date', 'wcpi' ); ?></span>
@@ -520,7 +551,7 @@
 				echo 'hidden'; }
 			?>
 			"></div>
-			<h3 class="ui header"><?php esc_html_e( 'Import Logs', 'wcpi' ); ?></h3>
+			<!-- <h3 class="ui header"><?php esc_html_e( 'Import Logs', 'wcpi' ); ?></h3> -->
 			<div class="ui secondary raised segment">
 				<div class="ajax_loaded_content">
 					<div class="wcpi-import-product-logs"></div>

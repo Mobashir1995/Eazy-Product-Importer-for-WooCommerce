@@ -246,3 +246,13 @@ function wcpi_convert_ISO_date( $date ) {
 	}
 	return false;
 }
+
+
+function wcpi_buy_pro_button() {
+	$link = '<a class="ui red right labeled icon button" href="https://checkout.freemius.com/mode/dialog/plugin/16625/plan/27738/" target="_blank">';
+	$link .= '<i class="cart icon"></i>';
+	$link .= esc_html__( 'Buy Pro', 'wcpi' );
+	$link .= '</a>';
+	
+	return $link;
+}

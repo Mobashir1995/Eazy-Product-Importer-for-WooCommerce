@@ -79,7 +79,7 @@ class WCPI_Check_Compat {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wcpi' ),
-			'<strong>' . esc_html__( 'WooW Product Importer for WooCommerce', 'wcpi' ) . '</strong>',
+			'<strong>' . esc_html__( 'Easy Product Importer for WooCommerce', 'wcpi' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'wcpi' ) . '</strong>',
 			WCPI_NOTICE_MIN_PHP_VERSION
 		);

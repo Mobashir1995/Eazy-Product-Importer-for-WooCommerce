@@ -91,7 +91,7 @@ class WCPI_Client {
 			'page'     => 1,
 			'per_page' => $settings->get_results_per_page(),
 			'order'    => $settings->get_product_order(),
-			'orderby'  => $settings->get_product_orderby(),
+			'orderby'  => WCPI_DEFAULT_FILTER_PRODUCT_ORDERBY,
 			'status'   => $settings->get_import_product_status(),
 		);
 		$filter_type = $settings->get_filter_product_type();
@@ -102,42 +102,7 @@ class WCPI_Client {
 		if ( ! empty( $cats ) ) {
 			$defaults['category'] = $cats;
 		}
-		$tags = $settings->get_filter_product_tag_id();
-		if ( ! empty( $tags ) ) {
-			$defaults['tag'] = $tags;
-		}
-		$sku = $settings->get_filter_sku();
-		if ( ! empty( $sku ) ) {
-			$defaults['sku'] = $sku;
-		}
-		$include = $settings->get_filter_include_id();
-		if ( ! empty( $include ) ) {
-			$defaults['include'] = $include;
-		}
-		$exclude = $settings->get_filter_exclude_id();
-		if ( ! empty( $exclude ) ) {
-			$defaults['exclude'] = $exclude;
-		}
-		$min_price = $settings->get_filter_min_price();
-		if ( '' !== $min_price ) {
-			$defaults['min_price'] = $min_price;
-		}
-		$max_price = $settings->get_filter_max_price();
-		if ( '' !== $max_price ) {
-			$defaults['max_price'] = $max_price;
-		}
-		$stock_status = $settings->get_filter_product_stock_status();
-		if ( ! empty( $stock_status ) && 'any' !== $stock_status ) {
-			$defaults['stock_status'] = $stock_status;
-		}
-		$before_date = wcpi_convert_ISO_date( $settings->get_filter_product_date_before() );
-		if ( $before_date ) {
-			$defaults['before'] = $before_date;
-		}
-		$after_date = wcpi_convert_ISO_date( $settings->get_filter_product_date_after() );
-		if ( $after_date ) {
-			$defaults['after'] = $after_date;
-		}
+
 		$params   = wp_parse_args( $params, $defaults );
 		$endpoint = 'products';
 		$response = $this->Client->get( $endpoint, $params );
@@ -146,8 +111,8 @@ class WCPI_Client {
 		// Set total resulted products and pages from API
 		//phpcs:enable
 		$headers        = $this->Client->http->getResponse()->getHeaders();
-		$total_products = $headers['x-wp-total'];
-		$total_pages    = $headers['x-wp-totalpages'];
+		$total_products = $headers['X-WP-Total'];
+		$total_pages    = $headers['X-WP-TotalPages'];
 		$logger         = wc_get_logger();
 		$context        = array( 'source' => 'wcpi-api-products' );
 		//phpcs:disable
@@ -184,8 +149,8 @@ class WCPI_Client {
 		$response = $this->Client->get( $endpoint, $params );
 
 		$headers        = $this->Client->http->getResponse()->getHeaders();
-		$total_products = $headers['x-wp-total'];
-		$total_pages    = $headers['x-wp-totalpages'];
+		$total_products = $headers['X-WP-Total'];
+		$total_pages    = $headers['X-WP-TotalPages'];
 		$logger         = wc_get_logger();
 		$context        = array( 'source' => 'wcpi-additional-products' );
 		$logger->debug( wc_print_r( $response, true ), $context );

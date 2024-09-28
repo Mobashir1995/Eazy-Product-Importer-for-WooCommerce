@@ -26,8 +26,8 @@ class WCPI_Admin_Menu_Page {
 	 */
 	public function admin_menu() {
 		add_menu_page(
-			__( 'WooW Product Import', 'textdomain' ),
-			__( 'WooW Product Import', 'textdomain' ),
+			__( 'Easy Product Import', 'textdomain' ),
+			__( 'Easy Product Import', 'textdomain' ),
 			'manage_options',
 			'wcpi-product-import',
 			array( $this, 'admin_menu_callback' ),

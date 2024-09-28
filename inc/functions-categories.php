@@ -192,6 +192,10 @@ function wcpi_attached_product_categories( $product_id, $args, $taxonomy = 'prod
 				$uncategorized_term_id = get_option( 'default_product_cat' );
 				$uncategorized_term    = get_term_by( 'term_id', $uncategorized_term_id, $taxonomy );
 
+				if( ! is_array( $default_categories ) ) {
+					$default_categories = array();
+				}
+
 				if ( ! in_array( $uncategorized_term->slug, $default_categories, true ) ) {
 					wp_remove_object_terms( $product_id, $uncategorized_term->term_id, $taxonomy );
 				}

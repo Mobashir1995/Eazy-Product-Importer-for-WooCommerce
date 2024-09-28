@@ -17,6 +17,12 @@
   font-weight: 400;
 }
 
+.wcpi-disable-input,
+.wcpi-disable-input.selection input {
+  cursor: not-allowed !important;
+  background: rgba(224, 224, 224, 0.7) !important;
+}
+
 body {
   background: #f1f1f1;
   color: #444;
@@ -39,6 +45,11 @@ table.wc_status_table th mark.yes {
 .wcpi-border-bottom {
   border: 0;
   border-bottom: 1px solid rgba(34, 36, 38, .1);
+}
+
+.w-100 {
+  display: block;
+  width: 100% !important;
 }
 
 .wcpi-no-border {

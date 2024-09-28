@@ -3,7 +3,7 @@
  * Plugin Name: Easy Product Importer for WooCommerce
  * Plugin URI: https://plugin-devs.com/
  * Description: Import WooCommerce Products from one Store to another Store
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: Plugin Devs
  * Author URI: https://plugin-devs.com/
  * License: GPLv2
@@ -265,6 +265,7 @@ final class WCPI {
 	}
 }
 
+require_once WCPI_PATH . 'freemius.php';
 
 // Global for backwards compatibility.
 $WCPI = WCPI::instance();
